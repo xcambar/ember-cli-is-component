@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-if-component",
   "version": "0.1.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "`{{if}}..{{else}}`-like block based on the existence of a component",
   "directories": {
     "doc": "doc",
     "test": "tests"
