@@ -1,4 +1,4 @@
-# Ember-cli-if-component
+# Ember-cli-if-component ![CircleCi Badge](https://circleci.com/gh/xcambar/ember-cli-if-component.svg?style=shield&circle-token=:circle-token)
 
 This addon provides the following syntax:
 
