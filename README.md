@@ -13,6 +13,8 @@ This addon provides the following syntax:
 It will display the first block if `componentName` can be resolved to
 a componnt in the app. Otherwise, it will display the `{{else}}` block.
 
+__Note__: The counterpart helper `{{unless-component}}` is also available.
+
 # Why?
 
 It is useful to leverage the`{{component componentName}}` helper

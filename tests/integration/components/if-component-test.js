@@ -10,8 +10,8 @@ moduleForComponent('if-component', 'Integration | Component | if component', {
   }
 });
 
-test('The main block is renderd if the component name resolves to a component', function(assert) {
-  this.render(hbs`{{#if-component "i-do-exist"}}Yay{{/if-component}}`);
+test('The main block is rendered if the component name resolves to a component', function(assert) {
+  this.render(hbs`{{#if-component "i-do-exist"}}Yay{{/if-component}}`, 'it renders the main block');
 
   assert.equal(this.$().text().trim(), 'Yay');
 });
