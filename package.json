@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-if-component",
   "version": "0.3.0",
-  "description": "`{{if}}..{{else}}`-like block based on the existence of a component",
+  "description": "`(is-component componentName) helper for your Ember apps`",
   "directories": {
     "doc": "doc",
     "test": "tests"
