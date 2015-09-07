@@ -1,4 +1,4 @@
-# Ember-cli-if-component ![CircleCi Badge](https://circleci.com/gh/xcambar/ember-cli-if-component.svg?style=shield&circle-token=:circle-token)
+# Ember-cli-if-component [![TravisCI Badge](https://travis-ci.org/xcambar/ember-cli-if-component.svg)](https://travis-ci.org/xcambar/ember-cli-if-component)
 
 This addon provides a new helper: `is-component` to be used as follows:
 
