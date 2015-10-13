@@ -1,9 +1,4 @@
-import Ember from 'ember';
-
-export function compute([name]) {
+export function isComponentHelper(params) {
+  let name = params[0];
   return !!this.container.lookup('component-lookup:main').lookupFactory(name, this.container);
 }
-
-export default Ember.Helper.extend({
-  compute
-});
