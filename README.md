@@ -17,7 +17,7 @@ Used with `{{if}}`, the `(is-component)` helper offers a nice failsafe
 to avoid the rendering error when the component may not exist:
 
 ```
-{{if (is-component componentName)}}
+{{#if (is-component componentName)}}
   {{component componentName}}
 {{else}}
   Sorry, {{componentName}} is not a known component.
