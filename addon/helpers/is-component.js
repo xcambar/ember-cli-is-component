@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import getOwner from 'ember-getowner-polyfill';
 
 export function compute([name]) {
-  return !!this.container.lookup('component-lookup:main').lookupFactory(name, this.container);
+  return !!getOwner(this).lookup('component-lookup:main').lookupFactory(name);
 }
 
 export default Ember.Helper.extend({
