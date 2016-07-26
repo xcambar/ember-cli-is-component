@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "https://github.com/xcambar/ember-cli-if-component",
+  "repository": "https://github.com/xcambar/ember-cli-is-component",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -38,7 +38,7 @@
   },
   "keywords": [
     "ember-addon",
-    "if-component",
+    "is-component",
     "component",
     "components"
   ],
