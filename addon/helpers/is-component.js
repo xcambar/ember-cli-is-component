@@ -7,7 +7,7 @@ export function compute([name]) {
   if (!lookup.componentFor) {
     return !!lookup.lookupFactory(name);
   }
-  return !!lookup.componentFor(name, owner);
+  return !!(lookup.componentFor(name, owner) || lookup.layoutFor(name, owner));
 }
 
 export default Ember.Helper.extend({
