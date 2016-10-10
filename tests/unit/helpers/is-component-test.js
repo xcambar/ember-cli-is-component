@@ -7,6 +7,13 @@ moduleForComponent('helper:is-component', 'Unit | Helper | is component', {
   integration: true
 });
 
+test('an empty name returns false', function(assert) {
+  assert.notOk(compute.call(this, ['']), 'false with an empty string');
+  assert.notOk(compute.call(this, ['  ']), 'false with a string with spaces only');
+  assert.notOk(compute.call(this, [null]), 'false with an empty string');
+  assert.notOk(compute.call(this, [undefined]), 'false with an empty string');
+});
+
 test('it returns true for a component', function(assert) {
   this.register('component:my-component', Ember.Component.extend());
   assert.ok(compute.call(this, ['my-component']), 'true when the component exists');
