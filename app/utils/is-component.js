@@ -1,1 +1,1 @@
-export { default } from 'ember-cli-if-component/utils/is-component';
+export { default } from 'ember-cli-is-component/utils/is-component';
