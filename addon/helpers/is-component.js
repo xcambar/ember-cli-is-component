@@ -1,11 +1,11 @@
 import Ember from 'ember';
-import isComponent from '../utils/is-component';
 const { Helper } = Ember;
-
-export function compute([name]) {
-  return isComponent.call(this, name);
-}
+const { service: inject } = Ember.inject;
 
 export default Helper.extend({
-  compute
+  isComponent: inject(),
+
+  compute([name]) {
+    return this.get('isComponent').test(name);
+  }
 });
