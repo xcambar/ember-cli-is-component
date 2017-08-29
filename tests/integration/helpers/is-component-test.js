@@ -13,7 +13,7 @@ test('it works', function(assert) {
 
   this.register('component:my-component', Component.extend());
 
-  this.set('name', 'foo-bar');
+  this.set('name', 'my-non-component');
 
   this.render(hbs`{{if (is-component name) 'yes' 'no'}}`);
 

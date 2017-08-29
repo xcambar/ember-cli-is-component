@@ -2,8 +2,8 @@
 
 This addon provides a new helper: `is-component` to be used as follows:
 
-```
-(is-component componentName)
+```handlebars
+{{is-component componentName}}
 ```
 
 The helper returns `true` when the first parameter can be looked up
@@ -16,12 +16,21 @@ an invalid component name is given as parameter.
 Used with `{{if}}`, the `(is-component)` helper offers a nice failsafe
 to avoid the rendering error when the component may not exist:
 
-```
+```handlebars
 {{#if (is-component componentName)}}
   {{component componentName}}
 {{else}}
   Sorry, {{componentName}} is not a known component.
 {{/if}}
+```
+
+## Example as a computed property
+
+```javascript
+isComponent: inject(),
+exists: computed(function() {
+  return this.get('isComponent').test('my-component');
+})
 ```
 
 ## Installation
