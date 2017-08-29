@@ -1,5 +1,5 @@
 {
-  "name": "ember-cli-if-component",
+  "name": "ember-cli-is-component",
   "dependencies": {
     "ember": "components/ember#release",
     "ember-cli-shims": "0.0.6",
