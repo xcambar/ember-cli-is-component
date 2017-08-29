@@ -1,1 +1,1 @@
-export { default, compute } from 'ember-cli-is-component/helpers/is-component';
+export { default } from 'ember-cli-is-component/helpers/is-component';
