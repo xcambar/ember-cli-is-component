@@ -3,7 +3,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 const { Component } = Ember;
 
-moduleForComponent('is-component', {
+moduleForComponent('is-component', 'helper:is-component', {
   integration: true
 });
 
