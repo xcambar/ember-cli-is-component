@@ -12,10 +12,14 @@ export default Service.extend({
     const owner = getOwner(this);
     const lookup = owner.lookup('component-lookup:main');
 
-    if (!lookup.componentFor) {
-      return !!lookup.lookupFactory(name);
-    }
+    try {
+      if (!lookup.componentFor) {
+        return !!lookup.lookupFactory(name);
+      }
 
-    return !!(lookup.componentFor(name, owner) || lookup.layoutFor(name, owner));
+      return !!(lookup.componentFor(name, owner) || lookup.layoutFor(name, owner));
+    } catch(err) {
+      return false;
+    }
   }
 });
