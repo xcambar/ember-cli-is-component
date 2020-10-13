@@ -9,7 +9,7 @@ moduleForComponent('is-component', 'helper:is-component', {
 
 
 test('it works', function(assert) {
-  assert.expect(2);
+  assert.expect(3);
 
   this.register('component:my-component', Component.extend());
 
@@ -18,6 +18,12 @@ test('it works', function(assert) {
   this.render(hbs`{{if (is-component name) 'yes' 'no'}}`);
 
   assert.equal(this.$().html(), 'no', 'returns false when component does not exist');
+
+  this.set('name', 'my illegal component name');
+
+  this.render(hbs`{{if (is-component name) 'yes' 'no'}}`);
+
+  assert.equal(this.$().html(), 'no', 'returns false when component name is not allowed');
 
   this.set('name', 'my-component');
 
