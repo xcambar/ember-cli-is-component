@@ -3,7 +3,9 @@ const { Service, getOwner } = Ember;
 
 export default Service.extend({
   test(name) {
-    name = (name || '').trim();
+    if (name.trim) {
+      name = (name || '').trim();
+    }
 
     if (!name) {
       return false;
