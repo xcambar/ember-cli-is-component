@@ -1,25 +1,40 @@
-import Ember from 'ember';
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
-const { Component } = Ember;
+// eslint-disable-next-line ember/no-classic-components
+import ClassicComponent from '@ember/component';
+import Component from '@glimmer/component';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
+import { hbs } from 'ember-cli-htmlbars';
 
-moduleForComponent('is-component', 'helper:is-component', {
-  integration: true
-});
+module('helper:is-component', function (hooks) {
+  setupRenderingTest(hooks);
 
+  for (let ComponentClass of [ClassicComponent, Component]) {
+    let componentType = ComponentClass === Component ? 'glimmer' : 'classic';
 
-test('it works', function(assert) {
-  assert.expect(2);
+    test(`it works for ${componentType} components`, async function (assert) {
+      assert.expect(2);
 
-  this.register('component:my-component', Component.extend());
+      this.owner.register(
+        'component:my-component',
+        class extends ComponentClass {}
+      );
 
-  this.set('name', 'my-non-component');
+      this.set('name', 'my-non-component');
 
-  this.render(hbs`{{if (is-component name) 'yes' 'no'}}`);
+      await render(hbs`
+        {{if (is-component this.name) 'yes' 'no'}}
+      `);
 
-  assert.equal(this.$().html(), 'no', 'returns false when component does not exist');
+      assert
+        .dom(this.element)
+        .hasText('no', 'returns false when component does not exist');
 
-  this.set('name', 'my-component');
+      this.set('name', 'my-component');
 
-  assert.equal(this.$().html(), 'yes', 'returns true when component exists');
+      assert
+        .dom(this.element)
+        .hasText('yes', 'returns true when component exists');
+    });
+  }
 });

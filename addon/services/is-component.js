@@ -1,7 +1,7 @@
-import Ember from 'ember';
-const { Service, getOwner } = Ember;
+import Service from '@ember/service';
+import { getOwner } from '@ember/application';
 
-export default Service.extend({
+export default class IsComponentService extends Service {
   test(name) {
     name = (name || '').trim();
 
@@ -16,6 +16,8 @@ export default Service.extend({
       return !!lookup.lookupFactory(name);
     }
 
-    return !!(lookup.componentFor(name, owner) || lookup.layoutFor(name, owner));
+    return !!(
+      lookup.componentFor(name, owner) || lookup.layoutFor(name, owner)
+    );
   }
-});
+}
