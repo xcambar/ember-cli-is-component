@@ -35,9 +35,9 @@ exists: computed(function() {
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+```
+ember install ember-cli-is-component
+```
 
 ## Running
 

@@ -1,11 +1,10 @@
-import Ember from 'ember';
-const { Helper } = Ember;
-const { service: inject } = Ember.inject;
+import Helper from '@ember/component/helper';
+import { inject as service } from '@ember/service';
 
-export default Helper.extend({
-  isComponent: inject(),
+export default class IsComponentHelper extends Helper {
+  @service isComponent;
 
   compute([name]) {
-    return this.get('isComponent').test(name);
+    return this.isComponent.test(name);
   }
-});
+}
