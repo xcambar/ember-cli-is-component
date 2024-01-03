@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-is-component",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "`{{is-component componentName}}` helper for your Ember apps",
   "directories": {
     "doc": "doc",
